@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="base_url">https://mobileweb.caps.ua.edu/cs491/</string>
+    <string name="login">api/Account/login</string>
+    <string name="recent">api/Story/recent?</string>
+    <string name="token_key">token=</string>
+    <string name="story">api/Story/byId?</string>
+    <string name="story_key">storyId=</string>
+</resources>

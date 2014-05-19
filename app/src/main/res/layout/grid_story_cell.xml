@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="8dp"
+    android:paddingRight="8dp"
+    android:paddingLeft="8dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@drawable/card_ui_bg"
+        android:padding="8dp"
+        android:layout_height="85dp">
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:padding="3dp"
+            android:layout_height="75dp"
+            android:src="@drawable/the_washington_herald"
+            android:scaleType="centerCrop"
+            android:background="@drawable/image_background"
+            android:id="@+id/imgStoryCell"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Large Text"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:id="@+id/tvTitle"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imgStoryCell" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Medium Text"
+            android:textColor="#555"
+            android:paddingStart="4dp"
+            android:id="@+id/tvAuthor"
+            android:layout_below="@+id/tvTitle"
+            android:layout_toRightOf="@+id/imgStoryCell" />
+    </RelativeLayout>
+</FrameLayout>

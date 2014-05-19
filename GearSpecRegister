@@ -1,0 +1,180 @@
+{
+  "declaredGears": [
+    {
+      "gearState": "GearStateInstalled",
+      "name": "ButterKnife",
+      "summary": "View \"injection\" library for Android which uses annotation processing to generate boilerplate code for you.\n\nEliminate findViewById calls by using @InjectView on fields.\nGroup multiple views in a list using @InjectViews. Operate on all of them at once with actions, setters, or properties.\nEliminate anonymous inner-classes for listeners by annotating methods with @OnClick and others.",
+      "release_notes": ".",
+      "version": "5.0.0",
+      "type": "jar",
+      "copyright": "Copyright 2013 Jake Wharton",
+      "homepage": "http://jakewharton.github.io/butterknife/",
+      "license": "Apache",
+      "authors": [
+        {
+          "name": "Jake Wharton",
+          "email": "jakewharton@gmail.com"
+        }
+      ],
+      "minimum_api": 5,
+      "source": {
+        "url": "http://repo1.maven.org/maven2/com/jakewharton/butterknife/5.0.0/butterknife-5.0.0.jar"
+      },
+      "tags": [
+        "Injection",
+        "annotation processing",
+        "annotation"
+      ]
+    },
+    {
+      "gearState": "GearStateInstalled",
+      "name": "Volley",
+      "summary": "Volley is a library that makes networking for Android apps easier and most importantly, faster.",
+      "version": "1.0.2",
+      "type": "module",
+      "copyright": "2013 Google",
+      "homepage": "https://github.com/mcxiaoke/android-volley",
+      "license": "None",
+      "authors": [
+        {
+          "name": "Google",
+          "email": "gearshelp@gmail.com"
+        }
+      ],
+      "minimum_api": 8,
+      "source": {
+        "url": "https://github.com/AndroidGears/android-volley.git",
+        "tag": "v1.0.2"
+      },
+      "tags": [
+        "networking",
+        "web",
+        "rest",
+        "queueing",
+        "image",
+        "loading"
+      ]
+    },
+    {
+      "gearState": "GearStateInstalled",
+      "name": "Gson",
+      "summary": "Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.\n\n\n\nThere are a few open-source projects that can convert Java objects to JSON. However, most of them require that you place Java annotations in your classes; something that you can not do if you do not have access to the source-code. Most also do not fully support the use of Java Generics. Gson considers both of these as very important design goals.\n\nGson Goals\n\nProvide simple toJson() and fromJson() methods to convert Java objects to JSON and vice-versa\nAllow pre-existing unmodifiable objects to be converted to and from JSON\nExtensive support of Java Generics\nAllow custom representations for objects\nSupport arbitrarily complex objects (with deep inheritance hierarchies and extensive use of generic types)",
+      "version": "2.2.4",
+      "type": "jar",
+      "copyright": "Google",
+      "homepage": "https://code.google.com/",
+      "license": "Apache",
+      "authors": [
+        {
+          "name": "Google",
+          "email": "androidGears@gmail.com"
+        }
+      ],
+      "minimum_api": 1,
+      "source": {
+        "url": "https://github.com/AndroidGears/Gson-Jar.git",
+        "tag": "v2.2.4",
+        "source_files": "2.2.4/gson-2.2.4.jar"
+      },
+      "tags": [
+        "gson",
+        "serialization",
+        "json",
+        "annotation",
+        "google",
+        "objects",
+        "serializer",
+        "marshall",
+        "marshaller",
+        "conversion",
+        "converter"
+      ]
+    },
+    {
+      "gearState": "GearStateInstalled",
+      "name": "Picasso",
+      "summary": "A powerful image downloading and caching library for Android",
+      "version": "2.2.0",
+      "type": "jar",
+      "copyright": "2013 Square, Inc.",
+      "homepage": "http://square.github.io/picasso/",
+      "license": "Apache 2.0",
+      "authors": [
+        {
+          "name": "Square, Inc.",
+          "email": "jakewharton@gmail.com"
+        }
+      ],
+      "minimum_api": 19,
+      "source": {
+        "url": "http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.2.0/picasso-2.2.0.jar"
+      },
+      "tags": [
+        "image",
+        "caching",
+        "handling",
+        "downloading",
+        "photo",
+        "picture"
+      ]
+    },
+    {
+      "gearState": "GearStateInstalled",
+      "name": "JodaTime",
+      "summary": "Joda-Time provides a quality replacement for the Java date and time classes. The design allows for multiple calendar systems, while still providing a simple API. The \u0027default\u0027 calendar is the ISO8601 standard which is used by XML. The Gregorian, Julian, Buddhist, Coptic, Ethiopic and Islamic systems are also included, and we welcome further additions. Supporting classes include time zone, duration, format and parsing.",
+      "release_notes": "- Interval/MutableInterval .isEqual() [#20]\n  Add method to compare intervals ignoring the chronology\n  https://github.com/JodaOrg/joda-time/issues/20\u003cbr/\u003e\u003cbr/\u003e- Chronology classes now define equals methods [#36]\n  Previously, the Chronology classes relied on caching in factory methods\n  to guarantee instances were singletons\n  Now, there are dedicated, normal, equals methods\n  This will aid weird cases where deserialization or similar avoids the caches\n  It will make no difference to most users\u003cbr/\u003e\u003cbr/\u003e- Maximum size for pattern cache [#49]\n  Sets a maximum size for the cache to avoid memory issues\u003cbr/\u003e\u003cbr/\u003e- Add LocalDateTime.toDate(TimeZone) [#48]\n  Provides an alternate way to create a java.util.Date that avoids some synchronization\u003cbr/\u003e\u003cbr/\u003e- Home page moved\n  http://www.joda.org/joda-time",
+      "version": "2.3.0",
+      "type": "jar",
+      "copyright": "Joda.org 2014",
+      "homepage": "http://www.joda.org/joda-time/",
+      "license": "Apache",
+      "authors": [
+        {
+          "name": "Joda.org",
+          "email": "scolebourne@joda.org"
+        }
+      ],
+      "minimum_api": 4,
+      "source": {
+        "url": "https://github.com/AndroidGears/JodaTime.git",
+        "tag": "v2.3.0",
+        "source_files": "joda-time-2.3.jar"
+      },
+      "tags": [
+        "time",
+        "date",
+        "library",
+        "calendar",
+        "formatting",
+        "parsing"
+      ]
+    },
+    {
+      "gearState": "GearStateInstalled",
+      "name": "FadingActionBar",
+      "summary": "FadingActionBar is a library which implements the cool fading action bar effect that can be seen in the new Play Music app.\n\nThis library uses the techniques outlined by Cyril Mottier in a popular blog post.\n\nThe three most commonly used action bar implementations are supported: stock (API 11+), ActionBarCompat and ActionBarSherlock.",
+      "version": "3.1.2",
+      "type": "module",
+      "copyright": "2013,2014 Manuel Peinado",
+      "homepage": "https://github.com/ManuelPeinado/FadingActionBar",
+      "license": "Apache 2.0",
+      "authors": [
+        {
+          "name": "Manuel Peinado Gallego",
+          "email": "manuel.peinado@gmail.com"
+        }
+      ],
+      "minimum_api": 11,
+      "source": {
+        "url": "https://github.com/AndroidGears/FadingActionBar.git",
+        "tag": "v3.1.2",
+        "source_files": "library"
+      },
+      "tags": [
+        "play",
+        "music",
+        "effect"
+      ]
+    }
+  ]
+}
