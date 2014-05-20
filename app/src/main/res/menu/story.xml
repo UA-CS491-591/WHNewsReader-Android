@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.flesh.washingtonhearld.app.Activities.LoginActivity" >
+    <item android:id="@+id/action_text_size"
+        android:title="@string/change_text_size"
+        android:icon="@drawable/ic_text_size"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>
