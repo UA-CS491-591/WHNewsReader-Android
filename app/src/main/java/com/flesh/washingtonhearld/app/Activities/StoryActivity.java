@@ -81,6 +81,12 @@ public class StoryActivity extends BaseActivity {
         protected ProgressBar pbStory;
         @InjectView(R.id.authorClick)
         protected RelativeLayout authorClick;
+        @InjectView(R.id.StoryAuthorImageView)
+        protected ImageView mAuthorImageView;
+        @InjectView(R.id.StoryAuthorFirstNameTextView)
+        protected TextView mAuthorFirstNameTextView;
+        @InjectView(R.id.StoryAuthorLastNameTextView)
+        protected TextView mAuthorLastNameTextView;
         private RequestQueue queue;
         private WashingtonHearldSingleton instance;
         private String url;
@@ -213,6 +219,11 @@ public class StoryActivity extends BaseActivity {
                     getActivity().startActivity(i);
                 }
             });
+
+            //Set author information
+            Picasso.with(getActivity()).load(story.getAuthor().getImageUrl()).centerInside().into(mAuthorImageView);
+            mAuthorFirstNameTextView.setText(story.getAuthor().getFirstName());
+            mAuthorLastNameTextView.setText(story.getAuthor().getLastName());
         }
 
         private Response.ErrorListener createErrorListener() {

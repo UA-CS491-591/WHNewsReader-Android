@@ -77,22 +77,39 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100sp"
-            android:background="#5ff0"
+            android:orientation="horizontal"
             android:id="@+id/authorClick"
             android:layout_gravity="bottom">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <ImageView android:id="@+id/StoryAuthorImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Author Clicker"
-                android:id="@+id/textView"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-        </RelativeLayout>
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/StoryAuthorFirstNameTextView"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold|italic"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="First"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"/>
+                <TextView
+                    android:id="@+id/StoryAuthorLastNameTextView"
+                    android:layout_width="wrap_content"
+                    android:textStyle="italic"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Last"
+                    android:padding="3dp"
+                    android:layout_height="wrap_content" />
+                </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
