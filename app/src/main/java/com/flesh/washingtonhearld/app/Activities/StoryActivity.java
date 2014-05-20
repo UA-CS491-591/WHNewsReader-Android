@@ -1,6 +1,5 @@
 package com.flesh.washingtonhearld.app.Activities;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Point;
@@ -18,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -27,20 +27,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.flesh.washingtonhearld.app.MyDateUtils;
 import com.flesh.washingtonhearld.app.Objects.DtoStory;
-import com.flesh.washingtonhearld.app.Objects.Login.DtoLogin;
-import com.flesh.washingtonhearld.app.Objects.Login.DtoLoginResponse;
 import com.flesh.washingtonhearld.app.R;
 import com.flesh.washingtonhearld.app.VolleyUtils.GsonRequest;
+import com.flesh.washingtonhearld.app.WH_Constants;
 import com.flesh.washingtonhearld.app.WashingtonHearldSingleton;
-import com.google.gson.GsonBuilder;
 import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class StoryActivity extends BaseActivity {
-
-    int mTextsize = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +50,13 @@ public class StoryActivity extends BaseActivity {
         }
     }
 
-
     /**
      * A placeholder fragment containing a simple view.
      */
 
     public static class PlaceholderFragment extends Fragment {
+
+        private static final String TEXT_SIZE_KEY = "text size key";
 
         public static class TextSize {
             static int TextSmall = 0;
@@ -82,6 +79,8 @@ public class StoryActivity extends BaseActivity {
         protected ImageView imgStory;
         @InjectView(R.id.pbStory)
         protected ProgressBar pbStory;
+        @InjectView(R.id.authorClick)
+        protected RelativeLayout authorClick;
         private RequestQueue queue;
         private WashingtonHearldSingleton instance;
         private String url;
@@ -102,7 +101,7 @@ public class StoryActivity extends BaseActivity {
             super.onCreate(savedInstanceState);
             instance = WashingtonHearldSingleton.getInstance();
             queue = Volley.newRequestQueue(getActivity());
-            url = getString(R.string.base_url) + getString(R.string.story)
+            url = getString(R.string.base_url) + getString(R.string.story_id)
                     + getString(R.string.token_key) + instance.accessToken + "&"
                     + getString(R.string.story_key) + getArguments().getString(STORY);
             p = getWindowDisplaySize(getActivity().getWindowManager());
@@ -163,15 +162,20 @@ public class StoryActivity extends BaseActivity {
             if (savedInstanceState == null) {
                 GetStory();
             } else {
-                mStory = savedInstanceState.getParcelable("Story");
+                if (savedInstanceState.containsKey(STORY))
+                    mStory = savedInstanceState.getParcelable(STORY);
+                if (savedInstanceState.containsKey(TEXT_SIZE_KEY))
+                    mTextSize = savedInstanceState.getInt(TEXT_SIZE_KEY);
                 SetUI(mStory);
+                SetTextSize(mTextSize);
             }
         }
 
         @Override
         public void onSaveInstanceState(Bundle outState) {
             super.onSaveInstanceState(outState);
-            outState.putParcelable("Story", mStory);
+            outState.putParcelable(STORY, mStory);
+            outState.putInt(TEXT_SIZE_KEY, mTextSize);
         }
 
         // LOGIN to the washington hearld system.
@@ -191,23 +195,31 @@ public class StoryActivity extends BaseActivity {
             };
         }
 
-        private void SetUI(DtoStory story) {
+        private void SetUI(final DtoStory story) {
             pbStory.setVisibility(View.GONE);
             tvStoryAuthor.setText(story.getAuthor().getFirstName() + story.getAuthor().getLastName());
             tvStoryTitle.setText(story.getTitle());
             tvStorySubTitle.setText(story.getSubtitle());
             tvStoryBody.setText(story.getBody());
-            tvStoryHeader.setText(story.getCategory().getName()+ " | " + MyDateUtils.TimeFromTodayAccuracyToTheMinute(story.getDatePublished()));
+            tvStoryHeader.setText(story.getCategory().getName() + " | " + MyDateUtils.TimeFromTodayAccuracyToTheMinute(story.getDatePublished()));
             Picasso.with(getActivity()).load(story.getImageUrl()).resize(p.x, p.x).centerInside().into(imgStory);
             getActivity().getActionBar().setTitle(story.getCategory().getName());
             getActivity().getActionBar().setSubtitle(story.getCategory().getDescription());
+            authorClick.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getActivity(), AuthorActivity.class);
+                    i.putExtra(WH_Constants.AUTHOR_KEY, story.getAuthor());
+                    getActivity().startActivity(i);
+                }
+            });
         }
 
         private Response.ErrorListener createErrorListener() {
             return new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.i("Login", error.getLocalizedMessage());
+                    Log.i("Story", error.getLocalizedMessage());
                 }
             };
         }

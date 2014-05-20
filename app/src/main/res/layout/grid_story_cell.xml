@@ -12,16 +12,22 @@
         android:padding="8dp"
         android:layout_height="85dp">
 
-
-        <ImageView
+        <RelativeLayout
             android:layout_width="100dp"
-            android:padding="3dp"
             android:layout_height="75dp"
-            android:src="@drawable/the_washington_herald"
-            android:scaleType="centerCrop"
+            android:padding="3sp"
             android:background="@drawable/image_background"
-            android:id="@+id/imgStoryCell"
-            />
+            android:id="@+id/rlStoryCell">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@drawable/the_washington_herald"
+                android:scaleType="centerCrop"
+
+                android:id="@+id/imgStoryCell" />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,7 +38,7 @@
             android:paddingTop="4dp"
             android:id="@+id/tvTitle"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/imgStoryCell" />
+            android:layout_toRightOf="@+id/rlStoryCell" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,6 +49,6 @@
             android:paddingStart="4dp"
             android:id="@+id/tvAuthor"
             android:layout_below="@+id/tvTitle"
-            android:layout_toRightOf="@+id/imgStoryCell" />
+            android:layout_toRightOf="@+id/rlStoryCell" />
     </RelativeLayout>
 </FrameLayout>

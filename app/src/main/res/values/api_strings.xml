@@ -5,6 +5,9 @@
     <string name="login">api/Account/login</string>
     <string name="recent">api/Story/recent?</string>
     <string name="token_key">token=</string>
-    <string name="story">api/Story/byId?</string>
+    <string name="author_id_key">authorId=</string>
+    <string name="story_id">api/Story/byId?</string>
+    <string name="stories_by_author">api/Story/byAuthor?</string>
     <string name="story_key">storyId=</string>
+
 </resources>

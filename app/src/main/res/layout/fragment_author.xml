@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.flesh.washingtonhearld.app.Activities.AuthorActivity$PlaceholderFragment">
+
+
+    <view
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        class="de.hdodenhof.circleimageview.CircleImageView"
+        android:id="@+id/cimg_Author"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="100sp"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:paddingStart="8dp"
+        android:id="@+id/tvAuthorPosition"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/cimg_Author" />
+
+    <View
+        android:layout_height="1sp"
+        android:layout_marginTop="4sp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/cimg_Author"
+        android:background="#5000" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvAuthorStories"
+        android:layout_below="@+id/cimg_Author"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

@@ -77,6 +77,23 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:background="#5ff0"
+            android:id="@+id/authorClick"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Author Clicker"
+                android:id="@+id/textView"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
     </LinearLayout>
 
 </ScrollView>

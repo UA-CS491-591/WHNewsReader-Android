@@ -1,9 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.flesh.washingtonhearld.app.Activities.StoryActivity" >
-    <item android:id="@+id/action_text_size"
-        app:icon="@drawable/ic_text_size"
-        android:title="Change Text Size"
-        app:showAsAction="always"/>
-</menu>
