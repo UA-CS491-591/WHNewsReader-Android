@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -80,7 +81,7 @@ public class StoryActivity extends BaseActivity {
         @InjectView(R.id.pbStory)
         protected ProgressBar pbStory;
         @InjectView(R.id.authorClick)
-        protected RelativeLayout authorClick;
+        protected LinearLayout authorClick;
         @InjectView(R.id.StoryAuthorImageView)
         protected ImageView mAuthorImageView;
         @InjectView(R.id.StoryAuthorFirstNameTextView)
