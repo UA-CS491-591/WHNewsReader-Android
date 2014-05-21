@@ -9,3 +9,4 @@ include ':Gears:Modules:FadingActionBar:3.1.2'
 
 include ':Gears:Modules:CircleImageView:1.1.0'
 include ':Gears:Modules:Volley:1.0.2'
+include ':Gears:Modules:ActionBar-PullToRefresh:0.9.3'

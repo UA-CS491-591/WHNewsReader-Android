@@ -113,6 +113,7 @@ public class LoginActivity extends BaseActivity {
                     instance.user = response.getUser();
                     Intent i = new Intent(getActivity(),HomeActivity.class);
                     getActivity().startActivity(i);
+                    getActivity().finish();
                 }
             };
         }
