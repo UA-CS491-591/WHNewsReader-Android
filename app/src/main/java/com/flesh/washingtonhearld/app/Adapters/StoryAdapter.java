@@ -57,7 +57,7 @@ public class StoryAdapter extends ArrayAdapter<DtoStory> {
         try {
             holder.tvTitle.setText(story.getTitle());
             holder.tvAuthor.setText(MyDateUtils.TimeFromTodayAccuracyToTheMinute(story.getDatePublished()));
-            Picasso.with(mContext).load(story.getImageUrl()).resize(275,275).centerInside().into(holder.img);
+            Picasso.with(mContext).load(story.getImageUrl()).into(holder.img);
         }catch (NullPointerException e){
 
         }

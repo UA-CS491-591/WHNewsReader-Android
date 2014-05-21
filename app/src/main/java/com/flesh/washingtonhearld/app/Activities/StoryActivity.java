@@ -36,6 +36,7 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StoryActivity extends BaseActivity {
 
@@ -83,7 +84,7 @@ public class StoryActivity extends BaseActivity {
         @InjectView(R.id.authorClick)
         protected LinearLayout authorClick;
         @InjectView(R.id.StoryAuthorImageView)
-        protected ImageView mAuthorImageView;
+        protected CircleImageView mAuthorImageView;
         @InjectView(R.id.StoryAuthorFirstNameTextView)
         protected TextView mAuthorFirstNameTextView;
         @InjectView(R.id.StoryAuthorLastNameTextView)
@@ -222,7 +223,7 @@ public class StoryActivity extends BaseActivity {
             });
 
             //Set author information
-            Picasso.with(getActivity()).load(story.getAuthor().getImageUrl()).centerInside().into(mAuthorImageView);
+            Picasso.with(getActivity()).load(story.getAuthor().getImageUrl()).resize(100,100).centerInside().noFade().into(mAuthorImageView);
             mAuthorFirstNameTextView.setText(story.getAuthor().getFirstName());
             mAuthorLastNameTextView.setText(story.getAuthor().getLastName());
         }
