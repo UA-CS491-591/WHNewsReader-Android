@@ -22,6 +22,7 @@ import com.flesh.washingtonhearld.app.Objects.DtoStory;
 import com.flesh.washingtonhearld.app.R;
 import com.flesh.washingtonhearld.app.WashingtonHearldSingleton;
 import com.google.gson.Gson;
+import com.mattyork.colours.Colour;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -144,6 +145,7 @@ public class HomeActivity extends BaseActivity {
         private void GetMostRecentStories() {
             JsonArrayRequest storiesRequest = new JsonArrayRequest(url, getStoriesSuccessListener(), createErrorListener());
             queue.add(storiesRequest);
+            int al = Colour.almondColor();
         }
 
         private Response.Listener<JSONArray> getStoriesSuccessListener() {

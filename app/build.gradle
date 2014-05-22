@@ -33,3 +33,4 @@ dependencies{compile project (':Gears:Modules:FadingActionBar:3.1.2')}
 dependencies{compile project (':Gears:Modules:CircleImageView:1.1.0')}
 dependencies{compile project (':Gears:Modules:Volley:1.0.2')}
 dependencies{compile project (':Gears:Modules:ActionBar-PullToRefresh:0.9.3')}
+dependencies{compile project (':Gears:Modules:Colours:1.0.1')}

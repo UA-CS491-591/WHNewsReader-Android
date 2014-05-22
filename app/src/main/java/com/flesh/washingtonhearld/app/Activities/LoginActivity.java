@@ -96,6 +96,8 @@ public class LoginActivity extends BaseActivity {
 
         }
 
+
+
         // LOGIN to the washington hearld system.
         private void Login() {
             DtoLogin login = new DtoLogin(etUsername.getText().toString(), etPassword.getText().toString());
